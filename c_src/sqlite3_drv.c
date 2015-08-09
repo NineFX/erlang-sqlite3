@@ -210,6 +210,9 @@ static ErlDrvEntry sqlite3_driver_entry = {
   NULL /* handle2 */,
   NULL /* process_exit */,
   NULL /* stop_select */
+  #if ERL_DRV_EXTENDED_MAJOR_VERSION >= 3 && ERL_DRV_EXTENDED_MINOR_VERSION >=2
+  NULL /* emergency_close */,
+  #endif
 };
 
 DRIVER_INIT(sqlite3_driver) {
